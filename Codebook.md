@@ -38,4 +38,13 @@ Data that you obtain from the script (both are located in the readme.md and run_
   fBodyGyroJerkMag
   ```
   
-There are exacly 73 measurement variables, excluding "subject" and "activity". The measurements are the averages of each variable for each activity and each subject.  
+There are exacly 73 measurement variables, excluding "subject" and "activity". The measurements are the averages of each variable for each activity and each subject.  The data is obtain from these link: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip You may use the unzip() function in RStudio, or do it manually (right click on the file and unzip it) in order to open the data set.
+
+You should load (and also be familiarized with) both "plyr" and "dplyr" packages in R. These commands will help you in ativating both packages:
+
+```{R}
+install.packages("plyr")
+install.packages("dplyr")
+library(plyr)
+library(dplyr)
+```
