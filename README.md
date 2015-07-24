@@ -48,7 +48,6 @@ train_sub<-read.table("./data/project/UCI HAR Dataset/train/subject_train.txt")
 
 ```{r}
 test_x<-read.table("./data/project/UCI HAR Dataset/test/X_test.txt")
-
 train_x<-read.table("./data/project/UCI HAR Dataset/train/X_train.txt")
 ```
 
@@ -56,7 +55,6 @@ train_x<-read.table("./data/project/UCI HAR Dataset/train/X_train.txt")
 
 ```{r}
 test_y<-read.table("./data/project/UCI HAR Dataset/test/Y_test.txt")
-
 train_y<-read.table("./data/project/UCI HAR Dataset/train/Y_train.txt")
 ```
 
@@ -64,7 +62,6 @@ Join the activity data frame with both "test_y" and "train_y" so each activity c
 
 ```{r}
 junto_test<-plyr::join(test_y,activity,by="V1")
-
 junto_train<-plyr::join(train_y,activity,by="V1")
 ```
 
