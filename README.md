@@ -88,16 +88,15 @@ tidy_data<-rbind(test,train)
 Extract the measurements on the mean and standard deviation. 
 
 ```{r}
-tidy_data<-cbind(tidy_data[1:2],tidy[,grep("mean",names(tidy_data))],tidy[,grep("std",names(tidy_data))])
+tidy_data<-tidy_data[,grep("subject|activity|mean|Mean|std",names(tidy_data))]
 ```
 
 In order to make the variables more descriptive, run the following codes in strict order:
 
 ```{r}
-desc=c(names(tidy_data)[1:2],grep("mean",names(tidy_data),value = T),grep("std",names(tidy_data),value = T))
-desc=gsub("-"," ",desc); desc=gsub("mean"," mean",desc); desc=gsub("std"," standard deviation",desc)
-desc=sub("t","time ",desc);desc=sub("f","frequency ",desc);desc=sub("actime ivity","activity",desc); desc=gsub("subjectime ","subject",desc)
-desc=sub("stime andard","standard",desc);desc=sub("meanFreq","mean Freq",desc)
+desc = names(tidy_data); desc = gsub("-"," ",desc); desc = sub("[Mm]ean"," mean",desc); 
+desc = sub("^t","time ",desc); desc = sub("^f","frequency ",desc); 
+desc = sub("meanFreq","mean Freq",desc); desc = gsub("std"," standard deviation",desc)
 names(tidy_data) = desc
 ```
 
