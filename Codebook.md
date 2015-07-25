@@ -59,7 +59,7 @@ Subject data stays the same. Activity data is changed into a more descriptive va
 6     laying
 ```
 
-The final tidy data obtained has 180 observations, 30 subjects doing each 6 different activities. Excluding subject and activity variables, there are 86 variables which are composed only by the measurements that contain the mean and  standard deviation of the features.  
+The final tidy data obtained has 180 observations, 30 subjects doing each 6 different activities. Excluding subject and activity variables, there are 86 variables which are composed only by the measurements that contain the mean and standard deviation of the features. The tidy data contains the averages of each measurement with respect to both the subject and the activity.   
 
 For more information about the data set, please read the following txt files in Notepad or Notepad++:
 
