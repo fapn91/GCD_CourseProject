@@ -88,9 +88,17 @@ tidy_data<-rbind(test,train)
 Extract the measurements on the mean and standard deviation. 
 
 ```{r}
-tidy_data<-tidy_data[,c(1:8,43:48,83:88,123:128,163:168,203:204,216:217,229:230,
-                        242:243,255:256,268:273,347:352,426:431,505:506,518:519,
-                        531:532,544:545,557:563)]
+tidy_data<-cbind(tidy_data[1:2],tidy[,grep("mean",names(tidy_data))],tidy[,grep("std",names(tidy_data))])
+```
+
+In order to make the variables more descriptive, run the following codes in strict order:
+
+```{r}
+desc=c(names(tidy_data)[1:2],grep("mean",names(tidy_data),value = T),grep("std",names(tidy_data),value = T))
+desc=gsub("-"," ",desc); desc=gsub("mean"," mean",desc); desc=gsub("std"," standard deviation",desc)
+desc=sub("t","time ",desc);desc=sub("f","frequency ",desc);desc=sub("actime ivity","activity",desc); desc=gsub("subjectime ","subject",desc)
+desc=sub("stime andard","standard",desc);desc=sub("meanFreq","mean Freq",desc)
+names(tidy_data) = desc
 ```
 
 If you want, check that features of this data set using dim(), str() or class() function dim(tidy_data) ; str(tidy_data) ; class(tidy_data). You can also have a quick and neat look at the data set with the tbl_df() function tbl_df(tidy_data)
