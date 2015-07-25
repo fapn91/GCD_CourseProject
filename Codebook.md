@@ -1,4 +1,4 @@
-### Codebook ###
+## Codebook
 
 This project is part of the Getting and Cleaning Data coursera class. The aim of this work is to take some sets of data and prepare ir for later analysis. In order to acomplish the project, it is necesary to use most of the tools that have been teached in this course. 
 
@@ -20,7 +20,7 @@ plyr::join...
 dplyr::summarise(...)
 ```
 
-## Raw data
+### Raw data
 
 There are 561 variables representing different measurements from these features:
 
@@ -46,7 +46,7 @@ fBodyGyroJerkMag
 
 Also, there is the subject variable, which in total are 30 subjects; and the activity variable in which there are six different activities.  
 
-## Processed data
+### Processed data
 
 Subject data stays the same. Activity data is changed into a more descriptive variable and takes the following values:
 
