@@ -101,7 +101,17 @@ desc=sub("stime andard","standard",desc);desc=sub("meanFreq","mean Freq",desc)
 names(tidy_data) = desc
 ```
 
-If you want, check that features of this data set using dim(), str() or class() function dim(tidy_data) ; str(tidy_data) ; class(tidy_data). You can also have a quick and neat look at the data set with the tbl_df() function tbl_df(tidy_data)
+If you want, check that features of this data set using dim(), str() or class() function 
+
+```{r}
+dim(tidy_data) ; str(tidy_data) ; class(tidy_data). 
+```
+
+You can also have a quick and neat look at the data set with the tbl_df() 
+
+```{r}
+function tbl_df(tidy_data)
+```
 
 Work is not finished, though. Now it is needed to create a second tidy data set in which it contains only "the average of each variable for each activity and each subject." This can be done with the group_by () function with respect to subject and activity, and the summarise_each(funs(mean)) function that runs as followed:
 
